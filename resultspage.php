@@ -2,7 +2,6 @@
 session_start();
 include "connectScriptforDB.php";
 
-// Ensure the database connection is working
 if (!$connection) {
     die("Connection failed: " . mysqli_connect_error());
 }
@@ -30,9 +29,8 @@ $sql = "SELECT
 
 $winresult = $connection->query(query: $sql);
 
-// Check for SQL query execution errors
 if (!$winresult) {
-    echo "Error: " . $connection->error;  // Display error message
+    echo "Error: " . $connection->error;  
     exit();
 }
 ?>
